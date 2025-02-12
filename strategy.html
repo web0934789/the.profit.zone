@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Entry Strategy</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        /* Gradient Background for Section with Heading */
+        .gradient-bg {
+            background: linear-gradient(to right, #2a5298, #4a90e2);
+            height: 160px; /* Adjust height to control how much space the gradient covers */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Allows positioning of the arrow inside this container */
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 1.7rem;
+            color: white;
+            margin: 0;
+        }
+
+        .content {
+            padding: 20px;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px; /* Added space at the bottom */
+        }
+
+        .content p {
+            line-height: 1.6;
+        }
+
+        /* START Button with Gradient Background */
+        .content button {
+            background: linear-gradient(to right, #2a5298, #4a90e2); /* Gradient Background */
+            color: white;
+            border: none;
+            padding: 20px 50px; /* Increased padding for a bigger button */
+            font-size: 1.5rem; /* Larger text for the button */
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 50px; /* Increased margin to move button lower */
+        }
+
+        /* Hover Effect for Button */
+        .content button:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* White Arrow */
+        .arrow {
+            position: absolute;
+            top: 54px; /* Distance from the top of the gradient section */
+            left: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 10; /* Ensures it stays on top of other elements */
+            text-decoration: none; /* Remove underline or line from the link */
+        }
+
+        .arrow:hover {
+            transform: scale(1.15);
+        }
+
+        /* Left-aligned text */
+        .left-align {
+            text-align: left;
+            width: 100%;
+            margin-left: 20px; /* Optional: Adds a little margin for better spacing */
+        }
+
+        /* White Space at the Bottom */
+        .bottom-space {
+            height: 50px; /* 100px white space at the bottom */
+            background-color: white;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Gradient Background Section Above Heading -->
+    <div class="gradient-bg">
+        <h1>Shadow Entry Strategy</h1>
+
+        <!-- Arrow for navigating to course.html -->
+        <a href="course.html" class="arrow">&#8592;</a>
+    </div>
+
+    <!-- Main Content with Button -->
+    <div class="content">
+        <p>Welcome to the <strong>Shadow Entry Strategy Course</strong>! 🎯</p>
+        <p>This course will elevate your trading with a proven approach based on Smart Money Concepts (SMC). 🚀</p>
+        <p>Here’s what you can expect:</p>
+
+        <!-- Left-aligned Text Section -->
+        <div class="left-align">
+            <p><strong>Introduction</strong> - Prepare your mindset, understand the basics, and set expectations. 🧠</p>
+            <p><strong>The Strategy</strong> - The heart of this course. Learn to combine key SMC elements into a structured, repeatable strategy. 📚</p>
+            <p><strong>FAQ + 1-on-1 Mentorship</strong> - Clarify doubts and get personal guidance. 💬</p>
+        </div>
+
+        <p>Ready to dive in? Let's get started! 🚀</p>
+
+        <!-- Button -->
+        <a href="https://docs.google.com/document/d/1vBFsnN6h53pM1lcAUcPLmtzNRzVvYCFN0zHAlQCXIKo/edit?usp=sharing">
+            <button>START</button>
+        </a>
+    </div>
+
+    <!-- White Space at the Bottom -->
+    <div class="bottom-space"></div>
+
+</body>
+</html>

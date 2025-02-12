@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Your Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000;
+            padding-bottom: 50px;
+        }
+        .header {
+            background: linear-gradient(to right, #2a5298, #4a90e2);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            font-weight: 600;
+            font-size: 2.5em;
+            position: relative;
+        }
+        .menu-btn {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            transform: translateY(-50%);
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease-in-out;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .menu.open {
+            left: 0;
+        }
+        .menu .menu-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .menu .menu-button {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        .instructions {
+            padding: 20px;
+            font-size: 1.2em;
+            text-align: left;
+            line-height: 1.6em;
+            max-width: 800px;
+            margin: auto;
+            padding-left: 37px; /* Posunutie textu doprava */
+        }
+        .setup-btn {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            padding: 15px;
+            background: linear-gradient(to right, #2a5298, #4a90e2);
+            color: white;
+            font-weight: 600;
+            font-size: 1.2em;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            box-shadow: none;
+        }
+        .setup-btn:hover {
+            box-shadow: 0px 5px 15px rgba(42, 82, 152, 0.4);
+        }
+        .setup-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        Welcome to The Profit Zone 🌟
+    </header>
+
+    <div class="menu" id="menu">
+        <div class="menu-title">MENU:</div>
+        <a href="journal.html" class="menu-button">Journal</a>
+        <a href="course.html" class="menu-button">Course</a>
+        <a href="discord.html" class="menu-button">Discord</a>
+        <a href="calculator.html" class="menu-button">Calculator</a>
+    </div>
+
+    <section class="instructions">
+        <h2>Your Path to Profitable Trading! 💰📈</h2>
+        <p>👋 Welcome, trader! This is your place to grow, learn, and master the markets.</p>
+        <h3>What’s Inside? 🚀</h3>
+        <ul>
+            <li><b>✅ Trading Journal</b> – Track your trades, emotions, and improve your strategy.</li>
+            <li><b>✅ 50-Day Trading Course</b> – Learn trading psychology and strategies. </li>
+            <li><b>✅ Discord Community</b> – Connect with traders, share ideas, and stay updated.</li>
+            <li><b>✅ Position Size Calculator</b> – Calculate your lot size quicky, so you can know how much you risk 📊</li>
+        </ul>
+        <h3>Why Journaling is Important? 📝</h3>
+        <ul>
+            <li>Helps you see mistakes and improve faster.</li>
+            <li>Builds discipline and consistency in your trading.</li>
+            <li>Stops emotional trading and bad decisions.</li>
+        </ul>
+        <h3>What’s in the 50-Day Trading Course? 📚</h3>
+        <ul>
+            <li>10 days <b>FREE</b> – Try it risk-free!</li>
+            <li>50 lessons – Learn mindset 🧠 and strategy 📈 every day.</li>
+            <li>Covers everything from candlesticks to risk management.</li>
+            <li>One-time payment of <b>$99</b> after the trial.</li>
+            <li>Learn my strategy for <b>FREE</b> (SMC knowledge required).</li>
+        </ul>
+        <h3>Join our Discord! 💬</h3>
+        <ul>
+            <li>Over <b>80+ traders</b> sharing trades & tips.</li>
+            <li>Learn from experienced traders and improve faster.</li>
+            <li>News calendar to stay ahead of big market moves.</li>
+        </ul>
+    </ul>
+    <h3>Position Size Calculator ⚖️</h3>
+    <ul>
+        <li>What is it? A tool to calculate trade size.</li>
+        <li>Purpose? Helps manage risk per trade.</li>
+        <li>How to use? Input balance, risk %, and SL.</li>
+    </ul>
+        <h3>What’s Coming Next? 🔥</h3>
+        <ul>
+            <li>🚀 <b>AI Trading Coach</b> – Get tips on improving your trading.</li>
+            <li>📈 <b>Trading Signals</b> – A system that finds profitable trades for you!</li>
+        </ul>
+        <h3>💡 Start now and take your trading to the next level! 🚀</h3>
+    </section>
+
+    <a href="menu.html" class="setup-btn">START NOW</a>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('open');
+        }
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('menu');
+            const menuBtn = document.querySelector('.menu-btn');
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
+
+</body>
+</html>

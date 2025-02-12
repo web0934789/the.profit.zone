@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Lot Size Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000;
+        }
+        .header {
+            background: linear-gradient(to right, #2a5298, #4a90e2);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            font-weight: 600;
+            font-size: 2.5em;
+            position: relative;
+        }
+        .menu-btn {
+            position: absolute;
+            top: 50%;
+            left: 18px;
+            transform: translateY(-50%);
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease-in-out;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .menu.open {
+            left: 0;
+        }
+        .menu .menu-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .menu .menu-button {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: left;
+        }
+        select, input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .calculate-btn {
+            width: 100%;
+            padding: 15px;
+            background: #16325c;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2em;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .calculate-btn:hover {
+            background: #122a4e;
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+        }
+        .result {
+            margin-top: 60px;
+            background: white;
+            color: black;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid black;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        .copy-btn {
+            cursor: pointer;
+            color: black;
+        }
+    </style>
+</head>
+<body onclick="closeMenu(event)">
+    <header class="header">
+        <div class="menu-btn" onclick="toggleMenu(event)">☰</div>
+        Forex Lot Size Calculator
+    </header>
+
+    <div class="menu" id="menu">
+        <div class="menu-title">MENU:</div>
+        <a href="index.html" class="menu-button">Home</a>
+        <a href="journal.html" class="menu-button">Journal</a>
+        <a href="course.html" class="menu-button">Course</a>
+        <a href="discord.html" class="menu-button">Discord</a>
+    </div>
+
+    <div class="container">
+        <p>📌 <b>Please enter the required information:<b></p>
+    
+            <br> <!-- Line break added here -->
+        <label for="pair">Select Currency Pair:</label>
+        <select id="pair">
+            <option>EUR/USD</option>
+            <option>USD/JPY</option>
+            <option>GBP/USD</option>
+            <option>USD/CHF</option>
+            <option>AUD/USD</option>
+            <option>USD/CAD</option>
+            <option>NZD/USD</option>
+            <option>EUR/GBP</option>
+            <option>EUR/JPY</option>
+            <option>GBP/JPY</option>
+            <option>AUD/JPY</option>
+            <option>CHF/JPY</option>
+            <option>EUR/AUD</option>
+            <option>GBP/CHF</option>
+            <option>NZD/JPY</option>
+        </select>
+
+        <label for="balance">Account Balance ($):</label>
+        <input type="number" id="balance">
+
+        <label for="risk">Risk Percentage (%):</label>
+        <input type="number" id="risk">
+
+        <label for="sl">Stop Loss (Pips):</label>
+        <input type="number" id="sl">
+
+        <button class="calculate-btn" onclick="calculateLotSize()">CALCULATE</button>
+
+        <div class="result" id="result">
+            Your Standard Lot Size is:<br>
+            <span id="lot-size">0.00</span>
+            <span class="copy-btn" onclick="copyToClipboard()">📋</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('open');
+        }
+        
+        function calculateLotSize() {
+            let balance = parseFloat(document.getElementById('balance').value);
+            let risk = parseFloat(document.getElementById('risk').value);
+            let sl = parseFloat(document.getElementById('sl').value);
+            let lotSize = (balance * (risk / 100)) / (sl * 10);
+            document.getElementById('lot-size').innerText = lotSize.toFixed(2);
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText(document.getElementById('lot-size').innerText);
+        }
+
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('menu');
+            const menuBtn = document.querySelector('.menu-btn');
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script><br> <!-- Line break added here -->
+    <br> <!-- Line break added here -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1e417e, #4a90e2); /* More subtle left to right gradient */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #ffffff;
+            color: #333;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease-in-out;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .menu.open {
+            left: 0;
+        }
+
+        .menu .menu-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: black; /* Changed to black */
+        }
+
+        .menu .menu-button {
+            display: block;
+            width: 80%;
+            padding: 15px;
+            margin: 10px auto;
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button {
+            background-color: #001f3d; /* Fixed color */
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.1); /* Smooth zoom effect */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Shadow effect */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Menu Button -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- Side Menu -->
+    <div class="menu" id="menu">
+        <div class="menu-title">Menu</div>
+        <a href="index.html" class="menu-button">Home</a>
+        <a href="X" class="menu-button">Journal</a>
+        <a href="course.html" class="menu-button">Course</a>
+        <a href="calculator.html" class="menu-button">Calculator</a>
+    </div>
+
+    <!-- Main Content -->
+    <div>
+        <h1>Discord</h1>
+        <a href="https://discord.gg/JTdFqQFT" target="_blank">
+            <button class="button">JOIN</button>
+        </a>
+    </div>
+
+    <script>
+        // Function to toggle the side menu
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('open');
+        }
+
+        // Close the menu if clicked outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('menu');
+            const menuBtn = document.querySelector('.menu-btn');
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 40px;
+        }
+        header {
+            background: linear-gradient(to right, #2a5298, #4a90e2);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            font-weight: 600;
+            font-size: 2.5em;
+            position: relative;
+        }
+        .menu-btn {
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease-in-out;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .menu.open {
+            left: 0;
+        }
+        .menu .menu-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .menu .menu-button {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        .menu .menu-button:hover {
+            background-color: #16325c;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            gap: 50px;
+        }
+        .box {
+            width: 100%;
+            text-align: center;
+        }
+        .box img {
+            max-width: 100%;
+            width: 600px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .box img:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            transform: scale(1.05);
+        }
+        .description {
+            font-size: 15px;
+            color: #333;
+            margin-top: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onclick="closeMenu(event)">
+    <header>
+        <span class="menu-btn" onclick="toggleMenu()">☰</span>
+        Course
+    </header>
+
+    <div class="menu" id="menu">
+        <div class="menu-title">MENU:</div>
+        <a href="index.html" class="menu-button">Home</a>
+        <a href="journal.html" class="menu-button">Journal</a>
+        <a href="calculator.html" class="menu-button">Calculator</a>
+        <a href="discord.html" class="menu-button">Discord</a>
+    </div>
+
+    <div class="content">
+        <div class="box">
+            <a href="free.html">
+                <img src="Trading (1) (1).png" alt="Free Access Image">
+            </a>
+            <p class="description">
+                10 days of free access to see if trading is for you! <br>
+                You’ll experience my teaching style, go through key lessons, and decide if you want<br>
+                to continue. After 10 days, you can unlock the full course for $99.
+            </p>
+        </div>
+        <div class="box">
+            <a href="paid.html">
+                <img src="Trading (4).png" alt="Paid Module Image">
+            </a>
+            <p class="description">
+                This exclusive PAID module gives you 40 powerful lessons,<br>
+                alternating between elite trading psychology and pro-level trading strategies. <br>
+                Designed to get you funded in 6 months. This is your ultimate edge in the markets.
+            </p>
+        </div>
+        <div class="box">
+            <a href="strategy.html">
+                <img src="Trading (2).png" alt="Mentorship Image">
+            </a>
+            <p class="description">
+                Master My Trading Strategy with 1-on-1 Support!<br>
+                Access to my complete trading strategy <br>
+                1-on-1 call with me if you need clarification <br>
+                Simple, direct, and effective learning 
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('open');
+        }
+
+        function closeMenu(event) {
+            const menu = document.getElementById('menu');
+            const menuBtn = document.querySelector('.menu-btn');
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+                menu.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAID Module</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-weight: bold;
+            background: linear-gradient(to right, #2a5298, #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3.2em;
+        }
+        
+        .day {
+            font-weight: bold;
+            color: black;
+            font-size: 1.2em;
+            margin-top: 30px;
+        }
+        
+        .button {
+            display: inline-block;
+            font-size: 1em;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to right, #2a5298, #4a90e2);
+            padding: 15px 40px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 250px;
+            text-align: center;
+        }
+        
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-size: 4em;
+            color: #2a5298;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <a href="paid.html" class="back-arrow">&larr;</a>
+    <h1>PAID Module:</h1>
+    
+    <script>
+        const days = [];
+        for (let i = 11; i <= 50; i++) {
+            days.push({ day: i, title: `Day ${i}`, link: `https://docs.google.com/document/d/${i}/edit?usp=sharing` });
+        }
+        days.push({ day: "EXTRA", title: "END", link: "https://docs.google.com/document/d/1UJhi_WjAJVrGDyjFmZLEMcMiHLg5OJpw4UpoF_opOgs/edit?usp=sharing" });
+        
+        days.forEach(d => {
+            document.write(`<div class="day">Day ${d.day}:</div>`);
+            document.write(`<a class="button" href="${d.link}" target="_blank">${d.title}</a>`);
+        });
+    </script>
+</body>
+</html>
